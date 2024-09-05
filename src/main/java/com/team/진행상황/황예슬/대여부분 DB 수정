@@ -1,0 +1,10 @@
+CREATE TABLE `reservation` (
+  `reservation_no` int NOT NULL AUTO_INCREMENT,
+  `reservation_employee` varchar(45) DEFAULT NULL,
+  `reservation_date` datetime DEFAULT NULL,
+  `return_date` datetime DEFAULT NULL,
+  `reservation_status` tinyint DEFAULT NULL,
+  `reservation_content` longtext,
+  `product_no` int NOT NULL,
+  PRIMARY KEY (`reservation_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

@@ -1,0 +1,10 @@
+CREATE TABLE `schedule` (
+  `schedule_no` int NOT NULL AUTO_INCREMENT,
+  `schedule_title` varchar(255) NOT NULL,
+  `schedule_start_date` datetime NOT NULL,
+  `schedule_end_date` datetime NOT NULL,
+  `schedule_location` varchar(255) NOT NULL,
+  `schedule_guests` varchar(255) NOT NULL,
+  `schedule_remarks` text,
+  PRIMARY KEY (`schedule_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

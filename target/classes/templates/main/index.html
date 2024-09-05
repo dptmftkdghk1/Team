@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragment/main-layout}"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainPage</title>
+    <link rel="stylesheet" href="../../static/css/main/index.css" th:href="@{/css/main/index.css}">
+    <script src="/js/main/index.js" th:src="@{/js/main/index.js}" defer></script>
+
+</head>
+<body>
+<header th:replace="~{fragment/header :: header}"></header>
+<main layout:fragment="main">
+    <section class="main-section">
+        <div class="main-div">
+
+            <a class="main-item" href="/menu/profile/test">마이페이지</a>
+            <a class="main-item" href="#">채팅</a>
+            <a class="main-item" href="#">공유드라이브</a>
+            <a class="main-item" th:href="|/menu/memo/${employee.employeeId}|">메모</a>
+            <a class="main-item" href="/product/manage_product">비품관리</a>
+            <a class="main-item" href="#">인사관리</a>
+            <a class="main-item" href="#">테스트</a>
+            <a class="main-item" href="#">테스트</a>
+            <a class="main-item" href="#">테스트</a>
+        </div>
+    </section>
+</main>
+<footer th:replace="~{fragment/footer :: footer}"></footer>
+</body>
+</html>

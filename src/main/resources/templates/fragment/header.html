@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/css/fragment/header.css" th:href="@{/css/fragment/header.css}">
+</head>
+<body>
+<header th:fragment="header">
+
+    <nav class="navbar">
+        <div class="logo"><a href="#" class="main-icon">New Company</a></div>
+        <ul class="nav-links">
+            <li><span th:text="${name} + '님'">사용자명</span></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown">공유드라이브</a>
+                <div class="dropdown-content">
+                    <a href="#">test1</a>
+                    <a href="#">test2</a>
+                    <a href="#">test3</a>
+                </div>
+            </li>
+            <li><a href="#">마이페이지</a></li>
+            <li><a href="#">회사관리</a></li>
+            <li><a href="#">Chat</a></li>
+            <form sec:authorize="authenticated" action="/auth/logout" method="post" style="all: unset !important;">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                <button style="all: unset !important;">로그아웃</button>
+            </form>
+        </ul>
+    </nav>
+</header>
+
+</body>
+</html>
+
+<style>
+    form.no-style {
+        all: unset !important;
+        display: block !important; /* 기본 스타일 복원 */
+    }
+    form.no-style button {
+        all: unset !important;
+        display: inline-block !important; /* 기본 스타일 복원 */
+    }
+</style>

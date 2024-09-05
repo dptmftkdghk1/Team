@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragment/main-layout}"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo Detail</title>
+    <link rel="stylesheet" href="../../static/css/menu/memo_detail.css" th:href="@{/css/menu/memo_detail.css}">
+</head>
+<body>
+<main layout:fragment="main">
+    <div class="memo-detail-container">
+        <h2>Memo Detail</h2>
+        <div class="memo-detail">
+            <p><strong>Title:</strong> <span th:text="${memoDTO.memoName}"></span></p>
+            <p><strong>Date:</strong> <span th:text="${#temporals.format(memoDTO.memoDate, 'yy-MM-dd HH:mm')}"></span></p>
+            <p><strong>Writer:</strong> <span th:text="${memoDTO.memoWriter.employeeName}"></span></p>
+            <hr>
+            <p><strong>Content:</strong></p>
+            <div th:text="${memoDTO.memoContent}"></div>
+        </div>
+        <a href="/menu/memo/{employeeId}" class="back-link">Back to Memo List</a>
+    </div>
+</main>
+</body>
+</html>
